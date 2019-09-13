@@ -1,0 +1,17 @@
+.feature-list {
+  display: flex;
+  margin: 0px 10vw;
+  justify-content: center;
+}
+
+.feature-list .list-item {
+  padding: 50px 0px;
+  width: 20vw;
+  text-align: center;
+  line-height: 1.5rem;
+}
+
+.feature-list .list-item i {
+  font-size: 1.5rem;
+  padding-right: 5px;
+}

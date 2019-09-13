@@ -1,0 +1,82 @@
+.login-signup-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.login-signup-page form {
+  height: 80vh;
+  width: 35vw;
+  background-color: rgb(3, 169, 244);
+  border: 1px solid black;
+  text-align: center;
+}
+
+.login-signup-page .form-header {
+  font-size: 30px;
+  padding: 15px;
+  padding-top: 45px;
+}
+
+.login-signup-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.login-signup-page .form-icons {
+  display: flex;
+  justify-content: center;
+}
+
+.login-signup-page .icon-container {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.login-signup-page .icon-container i {
+  font-size: 24px;
+}
+
+.login-signup-page .text {
+  margin-bottom: 20px;
+}
+
+.login-signup-page .error-message {
+  color: white;
+  background: red;
+  width: 60%;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 20px;
+}
+
+.login-signup-page form input {
+  width: 60%;
+  display: block;
+  margin: 10px auto;
+  padding: 15px;
+}
+
+.login-signup-page form .input-icon {
+  font-family: "FontAwesome", "Montserrat", sans-serif;
+}
+
+.login-signup-page .button {
+  margin: 20px;
+  display: inline-block;
+  padding: 15px 40px;
+  border-radius: 25px;
+  border: 1px solid black;
+  background-color: rgb(255, 255, 0);
+  cursor: pointer;
+}
