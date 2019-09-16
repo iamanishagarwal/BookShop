@@ -8,16 +8,20 @@ const baseUrl = "https://www.googleapis.com/books/v1/volumes";
 router.get("/search/term", (req, res) => {
   const searchTerm = req.query.searchTerm;
   fetch(
-    `${baseUrl}?q=${searchTerm}&key=${keys.googleApiKey}&startIndex=0&maxResults=6&printType=books`
+    `${baseUrl}?q=${searchTerm}&key=${keys.googleApiKey}&maxResults=6&printType=books`
   )
     .then(response => response.json())
     .then(result => {
       arr = result.items.map(item => {
+        let author;
+        if (!item.volumeInfo.authors) author = null;
+        else author = item.volumeInfo.authors.toString();
+
         return {
           id: item.id,
           title: item.volumeInfo.title,
           subtitle: item.volumeInfo.subtitle,
-          author: item.volumeInfo.authors.toString(),
+          author: author,
           img: item.volumeInfo.imageLinks.smallThumbnail
         };
       });
