@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./SearchBarResult.css";
 
 export class SearchBarResult extends Component {
@@ -20,10 +21,9 @@ export class SearchBarResult extends Component {
   };
 
   handleClick = e => {
-    if (this.node.contains(e.target)) {
-      return;
-    }
-
+    // if (this.node.contains(e.target)) {
+    //   return;
+    // }
     this.handleClickOutside();
   };
 
@@ -40,13 +40,15 @@ export class SearchBarResult extends Component {
         else author = element.author;
 
         return (
-          <div key={element.id} className="search-result">
-            <img src={element.img} alt=" " />
-            <div className="search-result-content">
-              <div className="search-result-title">{title}</div>
-              <div className="search-result-author">{author}</div>
+          <Link className="link" key={element.id} to={`/book/id/${element.id}`}>
+            <div className="search-result">
+              <img src={element.img} alt=" " />
+              <div className="search-result-content">
+                <div className="search-result-title">{title}</div>
+                <div className="search-result-author">{author}</div>
+              </div>
             </div>
-          </div>
+          </Link>
         );
       });
     }
@@ -56,7 +58,11 @@ export class SearchBarResult extends Component {
   render() {
     if (this.state.showResult)
       return (
-        <div className="search-bar-result" ref={node => (this.node = node)}>
+        <div
+          className="search-bar-result"
+          ref={node => (this.node = node)}
+          style={this.props.pageName !== "home" ? { top: "72px" } : {}}
+        >
           {this.renderResult()}
         </div>
       );

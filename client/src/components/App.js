@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { fetchUser } from "../action";
 import HomePage from "./HomePage/HomePage";
 import LoginSignupPage from "./LoginSignupPage/LoginSignupPage";
+import BookDetailPage from "./BookDetailPage/BookDetailPage";
 
 class App extends React.Component {
   componentWillMount() {
@@ -14,7 +15,8 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <Route path="/" exact component={HomePage} />
-        <Route path="/login" component={LoginSignupPage} />;
+        <Route path="/login" component={LoginSignupPage} />
+        <Route path="/book/id/:id" component={BookDetailPage} />
       </BrowserRouter>
     );
   }

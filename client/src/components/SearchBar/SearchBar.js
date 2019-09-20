@@ -35,7 +35,14 @@ class SearchBar extends React.Component {
   renderLoader = () => {
     if (this.state.showLoader) {
       return (
-        <div className="lds-ring">
+        <div
+          className="lds-ring"
+          style={
+            this.props.pageName !== "home"
+              ? { height: "50px" }
+              : { height: "70px" }
+          }
+        >
           <div></div>
           <div></div>
           <div></div>
@@ -46,12 +53,12 @@ class SearchBar extends React.Component {
   };
 
   renderSearchResult = () => {
-    console.log(this.state.result);
     if (this.state.result && this.state.renderSearchResult)
       return (
         <SearchBarResult
           result={this.state.result}
           unmountMe={this.handleSearchBarUnmount}
+          pageName={this.props.pageName}
         />
       );
   };
@@ -59,8 +66,18 @@ class SearchBar extends React.Component {
   render() {
     return (
       <>
-        <form className="search-bar">
-          <div className="input-field">
+        <form
+          className="search-bar"
+          style={this.props.pageName !== "home" ? { flexGrow: 2 } : {}}
+        >
+          <div
+            className="input-field"
+            style={
+              this.props.pageName !== "home"
+                ? { height: "50px" }
+                : { height: "70px" }
+            }
+          >
             <div className="search-icon">
               <i className="fa fa-search"></i>
             </div>

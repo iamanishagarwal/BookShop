@@ -14,13 +14,13 @@ class HomePage extends React.Component {
   render() {
     return (
       <div className="introduction">
-        <NavigationBar className="navigation-bar" />
+        <NavigationBar className="navigation-bar" pageName="home" />
         <div className="introduction-header">
           Welcome to BookShop
           <br />
           Search over millions of books
         </div>
-        <SearchBar className="search-bar" />
+        <SearchBar pageName="home" />
         <div className="feature-list-element">
           <FeatureList />
         </div>

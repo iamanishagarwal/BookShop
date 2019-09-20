@@ -1,6 +1,6 @@
 .search-bar-result {
   width: 40vw;
-  margin: 2px 10ox;
+  margin: 2px 10px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
