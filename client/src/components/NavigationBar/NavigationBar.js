@@ -72,7 +72,16 @@ class NavigationBar extends React.Component {
           <div className="nav-item nav-header">BOOKSHOP</div>
           {this.renderSearchBar()}
           <div className="nav-item">
-            <i className="fa fa-2x fa-cart-plus" />
+            <Link to="/user/cart">
+              <i
+                className="fa fa-2x fa-cart-plus"
+                style={
+                  this.props.pageName === "home"
+                    ? { color: "white" }
+                    : { color: "black" }
+                }
+              />
+            </Link>
           </div>
           <div className="nav-item">{this.renderAuth()}</div>
         </div>
