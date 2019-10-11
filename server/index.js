@@ -6,9 +6,11 @@ const bodyParser = require("body-parser");
 const keys = require("./config/keys");
 const auth = require("./middleware/auth");
 require("./model/User");
+require("./model/Book");
 require("./services/passport");
 const user = require("./routes/user");
-const book = require("./routes/book");
+const searchBook = require("./routes/searchBook");
+const cart = require("./routes/cart");
 const app = express();
 
 app.use(
@@ -43,6 +45,7 @@ app.get("/api", auth, (req, res) => {
 });
 
 app.use("/api/user", user);
-app.use("/api/book", book);
+app.use("/api/book", searchBook);
+app.use("/api/user/cart", cart);
 
 app.listen(port, () => console.log(`The server is running on port : ${port}`));
