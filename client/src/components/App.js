@@ -5,6 +5,7 @@ import { fetchUser } from "../action";
 import HomePage from "./HomePage/HomePage";
 import LoginSignupPage from "./LoginSignupPage/LoginSignupPage";
 import BookDetailPage from "./BookDetailPage/BookDetailPage";
+import CartDetailPage from "./CartDetailPage/CartDetailPage";
 
 class App extends React.Component {
   componentWillMount() {
@@ -17,6 +18,7 @@ class App extends React.Component {
         <Route path="/" exact component={HomePage} />
         <Route path="/login" component={LoginSignupPage} />
         <Route path="/book/id/:id" component={BookDetailPage} />
+        <Route path="/user/cart" component={CartDetailPage} />
       </BrowserRouter>
     );
   }

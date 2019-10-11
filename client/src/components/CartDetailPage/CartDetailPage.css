@@ -1,0 +1,31 @@
+.cart-page .page-title {
+  padding: 50px;
+  color: white;
+  background-color: rgb(3, 169, 244);
+  font-size: 24px;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.cart-page .cart-detail-table {
+  margin: 5vh 10vw;
+  padding: 10px;
+}
+
+.cart-page .cart-detail-table th {
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.cart-page .cart-detail-table tr td,
+.cart-page .cart-detail-table tr th {
+  border-bottom: 1px solid #9e9e9e;
+  text-align: center;
+}
+
+.cart-page .cart-detail-table tr td:first-child {
+  width: 50vw;
+  text-align: left;
+}
