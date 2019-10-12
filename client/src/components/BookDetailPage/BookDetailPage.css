@@ -3,29 +3,29 @@
   margin-left: 10vw;
 }
 
-.book-img {
+.book-detail-page .book-img {
   padding: 10px;
   height: 300px;
   width: 225px;
 }
 
-.book-detail {
+.book-detail-page .book-detail {
   width: 50vw;
   padding: 10px;
 }
 
-.book-title {
+.book-detail-page .book-title {
   font-size: 18px;
   font-weight: 800;
 }
 
-.book-author {
+.book-detail-page .book-author {
   color: #9e9e9e;
   font-size: 12px;
   padding: 10px 0px;
 }
 
-.book-price {
+.book-detail-page .book-price {
   font-size: 18px;
   color: rgb(3, 169, 244);
   display: inline-block;
@@ -34,21 +34,21 @@
   border-radius: 5px;
 }
 
-.book-description {
+.book-detail-page .book-description {
   padding: 10px 0;
 }
 
-.increment-book-quantity,
-.book-quantity,
-.decrement-book-quantity {
+.book-detail-page .increment-book-quantity,
+.book-detail-page .book-quantity,
+.book-detail-page .decrement-book-quantity {
   display: inline-block;
   text-align: center;
   border: 1px solid black;
   font-weight: 800;
 }
 
-.increment-book-quantity,
-.decrement-book-quantity {
+.book-detail-page .increment-book-quantity,
+.book-detail-page .decrement-book-quantity {
   height: 30px;
   width: 30px;
   border-radius: 50%;
@@ -58,7 +58,7 @@
   cursor: pointer;
 }
 
-.book-quantity {
+.book-detail-page .book-quantity {
   display: inline-flex;
   height: 30px;
   width: 60px;
