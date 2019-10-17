@@ -16,9 +16,24 @@ export class CartDetailPage extends Component {
     this.setState({ books });
   };
 
+  handleBookQuantity = async (id, quantity) => {
+    if (quantity > 0) {
+      const result = await axios.patch(`/api/user/cart/book/${id}`, {
+        quantity: quantity
+      });
+      if (result.data === "Success") this.componentDidMount();
+    } else {
+      this.handleClickOnCross();
+    }
+  };
+
+  handleClickOnCross = async id => {
+    const result = await axios.delete(`/api/user/cart/book/${id}`);
+    if (result.data === "Success") this.componentDidMount();
+  };
+
   fetchData = async () => {
     const result = await axios.get("/api/user/cart");
-    console.log(result.data);
     return result.data;
   };
 
@@ -41,12 +56,30 @@ export class CartDetailPage extends Component {
             </Link>
           </td>
           <td>
-            <i className="fa fa-chevron-down"></i>
+            <i
+              className="fa fa-chevron-down"
+              onClick={() =>
+                this.handleBookQuantity(book.id, book.quantity - 1)
+              }
+            ></i>
             {book.quantity}
-            <i className="fa fa-chevron-up"></i>
+            <i
+              className="fa fa-chevron-up"
+              onClick={() =>
+                this.handleBookQuantity(book.id, book.quantity + 1)
+              }
+            ></i>
           </td>
           <td>{book.price}</td>
-          <td>{book.quantity * book.price}</td>
+          <td>{Math.round(book.quantity * book.price * 100) / 100}</td>
+          <td>
+            <span
+              className="cross-icon"
+              onClick={() => this.handleClickOnCross(book.id)}
+            >
+              x
+            </span>
+          </td>
         </tr>
       );
     });
@@ -65,6 +98,7 @@ export class CartDetailPage extends Component {
               <th>Quantity</th>
               <th>Price</th>
               <th>Total</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -74,6 +108,7 @@ export class CartDetailPage extends Component {
               <td></td>
               <td>Total</td>
               <td>257</td>
+              <td></td>
             </tr>
           </tbody>
         </table>
