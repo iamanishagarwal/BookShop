@@ -56,6 +56,13 @@
 .fa-chevron-down,
 .fa-chevron-up {
   margin: 15px;
+  cursor: pointer;
+}
+
+.cross-icon {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .lds-spinner {
