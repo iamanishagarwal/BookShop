@@ -28,10 +28,37 @@ router.post("/book", auth, async (req, res) => {
   }
 });
 
+router.patch("/book/:id", auth, async (req, res) => {
+  console.log(req.params.id);
+  try {
+    let book = await Book.findOne({ userId: req._id, id: req.params.id });
+    if (book) {
+      book.quantity = req.body.quantity;
+      await book.save();
+      res.send("Success");
+    } else res.send("Something went wrong");
+  } catch (er) {
+    console.log(er);
+    res.send("Something went wrong");
+  }
+});
+
+router.delete("/book/:id", auth, async (req, res) => {
+  try {
+    let book = await Book.deleteOne({ userId: req._id, id: req.params.id });
+    if (book) res.send("Success");
+    else res.send("Something went wrong");
+  } catch (er) {
+    console.log(er);
+    res.send("Something went wrong");
+  }
+});
+
 router.post("/book/search", auth, async (req, res) => {
   try {
-    let book = await Book.find({ userId: req._id, id: req.body.id });
-    res.send("Success");
+    let book = await Book.findOne({ userId: req._id, id: req.body.id });
+    if (book) res.send("Success");
+    else res.send("Not Found");
   } catch (er) {
     console.log(er);
     res.send("Not Found");
