@@ -142,7 +142,7 @@ export default class BookDetailPage extends Component {
               >
                 +
               </span>
-              <span className="add-book button" onClick={this.handleAddToCart}>
+              <span className="button" onClick={this.handleAddToCart}>
                 {this.state.isPresentInCart ? "Go to Cart" : "Add to Cart"}
               </span>
             </div>
