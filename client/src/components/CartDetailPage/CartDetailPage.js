@@ -11,6 +11,8 @@ export class CartDetailPage extends Component {
     this.state = { books: null };
   }
 
+  totalPrice = 0;
+
   componentDidMount = async () => {
     const books = await this.fetchData();
     this.setState({ books });
@@ -42,6 +44,7 @@ export class CartDetailPage extends Component {
     let books = this.state.books;
     console.log(books);
     result = books.map(book => {
+      this.totalPrice += book.price;
       return (
         <tr key={book.id}>
           <td>
@@ -70,8 +73,8 @@ export class CartDetailPage extends Component {
               }
             ></i>
           </td>
-          <td>{book.price}</td>
-          <td>{Math.round(book.quantity * book.price * 100) / 100}</td>
+          <td>Rs {book.price}</td>
+          <td>Rs {Math.round(book.quantity * book.price * 100) / 100}</td>
           <td>
             <span
               className="cross-icon"
@@ -91,27 +94,28 @@ export class CartDetailPage extends Component {
       <div className="cart-page">
         <NavigationBar pageName="CartDetailPage" />
         <div className="page-title">Shopping Cart</div>
-        <table className="cart-detail-table" cellPadding="10" cellSpacing="0">
-          <thead>
-            <tr>
-              <th>Items</th>
-              <th>Quantity</th>
-              <th>Price</th>
-              <th>Total</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.renderBook()}
-            <tr>
-              <td></td>
-              <td></td>
-              <td>Total</td>
-              <td>257</td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
+        <div className="cart-detail-container">
+          <table cellPadding="10" cellSpacing="0">
+            <thead>
+              <tr>
+                <th>Items</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>{this.renderBook()}</tbody>
+          </table>
+          <div className="total-price">
+            <span>Total</span>
+            <span>Rs {this.totalPrice}</span>
+          </div>
+          <div className="button-group">
+            <span className="button">Continue Shopping</span>
+            <span className="button">Process Checkout</span>
+          </div>
+        </div>
       </div>
     );
   };
