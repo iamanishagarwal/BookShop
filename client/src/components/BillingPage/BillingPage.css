@@ -1,0 +1,79 @@
+.billing-page .page-title {
+  padding: 50px;
+  color: white;
+  background-color: rgb(3, 169, 244);
+  font-size: 24px;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.billing-page .billing-page-container {
+  margin: 5vh 10vw;
+  display: flex;
+  justify-content: center;
+}
+
+.billing-page .billing-page-container .buyer-info,
+.billing-page .billing-page-container .payment-method {
+  margin: 10px 50px;
+  width: 50%;
+}
+
+.billing-page-container .section-heading {
+  padding: 15px 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-transform: uppercase;
+  border-bottom: 1px solid black;
+}
+
+.billing-page-container .input-multiple-section {
+  margin: 30px 0;
+  display: flex;
+}
+
+.billing-page-container .input-section {
+  margin: 30px 10px;
+}
+
+.billing-page-container .input-multiple-section .input-section {
+  margin: 0 10px;
+}
+
+.billing-page-container .input-section .input-label {
+  margin-bottom: 15px;
+  opacity: 0.75;
+}
+
+.billing-page-container .input-section .input {
+  padding: 10px;
+  width: 80%;
+}
+
+.billing-page-container .icon-section {
+  margin: 30px 10px;
+  display: flex;
+}
+
+.billing-page-container .icon-section .icon-container {
+  margin-right: 10px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #9e9e9e;
+  opacity: 0.5;
+}
+
+.billing-page-container .icon-section .icon-container span {
+  margin: 10px 0;
+  font-style: 8px;
+}
+
+.billing-page-container .button-container {
+  display: flex;
+  justify-content: flex-end;
+}
