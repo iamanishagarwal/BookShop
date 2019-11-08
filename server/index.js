@@ -30,7 +30,10 @@ require("./routes/authRoutes")(app);
 
 settingMongoDB = async () => {
   try {
-    await mongoose.connect(keys.mongoURL, { useNewUrlParser: true });
+    await mongoose.connect(keys.mongoURL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    });
     console.log("MongoDB connected......");
   } catch {
     console.log("Error while connecting to mongoDB........");
